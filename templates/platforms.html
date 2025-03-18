@@ -1,0 +1,81 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Account Analysis</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .platforms-section {
+            margin-top: 50px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Fake Account Checker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <h1 class="text-center">Welcome to Fake Account Checker</h1>
+        <a href="#platforms" class="btn btn-light btn-lg">Get Started</a>
+    </div>
+
+    <div class="container platforms-section" id="platforms">
+        <h2 class="text-center">Select a Platform</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="twitter_image_url.jpg" alt="Twitter" class="img-fluid">
+                <h3>Twitter</h3>
+                <a href="/analyze/twitter" class="btn btn-primary">Analyze Twitter</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="facebook_image_url.jpg" alt="Facebook" class="img-fluid">
+                <h3>Facebook</h3>
+                <a href="/analyze/facebook" class="btn btn-primary">Analyze Facebook</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="instagram_image_url.jpg" alt="Instagram" class="img-fluid">
+                <h3>Instagram</h3>
+                <a href="/analyze/instagram" class="btn btn-primary">Analyze Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Smooth scrolling effect
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000); // 1 second for scrolling
+            }
+        });
+    </script>
+</body>
+</html>

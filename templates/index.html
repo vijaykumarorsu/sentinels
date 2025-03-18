@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinels - Fake Account Analysis</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #6f42c1;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #ffffff !important;
+        }
+
+        .btn-outline-light {
+            color: #ffffff;
+            border: 2px solid #ffffff; /* Match border color with text color */
+        }
+
+        .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            color: #ffffff; /* Ensure text remains white */
+        }
+
+        .hero-section {
+            background: linear-gradient(90deg, #6f42c1 0%, #a36fda 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            margin-top: 56px; /* Space for fixed navbar */
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-get-started {
+            padding: 15px 30px;
+            border-radius: 30px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-get-started:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .platforms-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+        }
+
+        .platform-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center; /* Center text */
+            margin-bottom: 30px;
+        }
+
+        .platform-card:hover {
+            transform: scale(1.05);
+        }
+
+        .platform-card img {
+            height: 100px; /* Image height */
+            width: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+            margin-top: 15px; /* Space above the image */
+        }
+
+        .platform-card h3 {
+            color: #6f42c1;
+            margin: 10px 0;
+            font-size: 1.5rem; /* Font size for title */
+        }
+
+        .platform-card p {
+            font-size: 1rem; /* Font size for description */
+            margin-bottom: 15px; /* Margin below description */
+        }
+
+        .btn-analyze {
+            background-color: #007bff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px; /* Padding for button */
+            color: white;
+            font-size: 1rem; /* Font size for button */
+        }
+
+        .btn-analyze:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #6f42c1;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem; /* Smaller font size on mobile */
+            }
+
+            .hero-section p {
+                font-size: 1rem; /* Smaller font size on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sentinels Logo" style="height: 50px; border-radius:50px"> SENTINELS 
+        </a>
+       
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light mr-2" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <h1>Welcome to Sentinels</h1>
+        <p>Your ultimate tool for detecting fake accounts on social media platforms.</p>
+        <a href="#platforms" class="btn btn-get-started">Get Started</a>
+    </div>
+
+    <div class="container platforms-section" id="platforms">
+        <h2 class="text-center mb-4">Select a Platform</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="card platform-card">
+                    <img src="{{ url_for('static', filename='images/twitter_image.jpg') }}" alt="Twitter" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h3 class="card-title">Twitter</h3>
+                        <a href="/analyze/twitter" class="btn btn-analyze">Analyze Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card platform-card">
+                    <img src="{{ url_for('static', filename='images/facebook_image.jpg') }}" alt="Facebook" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h3 class="card-title">Facebook</h3>
+                        <a href="/analyze/facebook" class="btn btn-analyze">Analyze Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card platform-card">
+                    <img src="{{ url_for('static', filename='images/instagram_image.jpg') }}" alt="Instagram" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h3 class="card-title">Instagram</h3>
+                        <a href="/analyze/instagram" class="btn btn-analyze">Analyze Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sentinels. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
